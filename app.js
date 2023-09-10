@@ -7,8 +7,8 @@ const fetchAPI = async (city) => {
         let response = await fetch(apiURL + `${city}&appid=${apiKey}`);
         let data = await response.json();
         console.log(data)
-        document.querySelector(".city").innerHTML = data.name;
-        document.querySelector(".humidity").innerHTML = data.main.humidity;
+        document.querySelector(".city").textContent = data.name;
+        document.querySelector(".humidity").textContent = data.main.humidity;
         document.querySelector(".temp").textContent = `${Math.round(data.main.temp)}°C`;
         document.querySelector(".wind").textContent = data.wind.speed;
         document.querySelector(".cloud").textContent = data.weather[0].description;
